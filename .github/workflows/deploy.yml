@@ -37,13 +37,13 @@ jobs:
         run: forge settings set usage-analytics true
 
       - name: Deploy to Staging
-        run: forge deploy -e staging --non-interactive --verbose
+        run: forge deploy -e development --non-interactive --verbose
         env:
           FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
 
       - name: Install to staging site
-        run: forge install --site tinds.atlassian.net --product jira --non-interactive -e staging --upgrade --verbose
+        run: forge install --site tinds.atlassian.net --product jira --non-interactive -e development --verbose
         env:
           FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
