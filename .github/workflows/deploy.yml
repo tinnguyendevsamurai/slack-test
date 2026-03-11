@@ -43,7 +43,7 @@ jobs:
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
 
       - name: Install to staging site
-        run: forge install --site ${{ secrets.STAGING_SITE }} --product jira --non-interactive -e staging --verbose --upgrade
+        run: forge install --site tinds.atlassian.net --product jira --non-interactive -e staging --upgrade --verbose
         env:
           FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
           FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
